@@ -1,0 +1,28 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+
+
+  db:
+    image: postgres:14
+    container_name: postgres_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+    ports:
+      - ${EXTDB_PORT}:${INTDB_PORT}
+  web:
+    build: .
+    entrypoint: /entrypoint.sh
+    volumes:
+      - .:/app
+    ports:
+      - ${FASTAPI_PORT}:${FASTAPI_PORT}
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - ${ADM_PORT}:${ADM_PORT}
