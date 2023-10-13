@@ -5,10 +5,10 @@ FROM python:3.9
 WORKDIR /code
 
 #
-COPY ./reqs.txt /code/reqs.txt
+COPY ./requirments.txt /code/requirments.txt
 
 #
-RUN pip install --no-cache-dir --upgrade -r /code/reqs.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirments.txt
 
 #
 COPY ./app /code/app

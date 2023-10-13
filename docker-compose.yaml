@@ -7,7 +7,7 @@ services:
 
   db:
     image: postgres:14
-    container_name: postgres_db
+    container_name: postgresSQL_db
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
@@ -26,3 +26,6 @@ services:
     restart: always
     ports:
       - ${ADM_PORT}:${ADM_PORT}
+
+volumes:
+    postgres_data:
