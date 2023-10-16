@@ -10,7 +10,6 @@ export PYTHONPATH=/auth/:$PYTHONPATH
 #sleep 5
 
 # Start the FastAPI application
-alembic revision --autogenerate -m "..."
-alembic upgrade head
+
 
 uvicorn app.main:app --host ${FASTAPI_HOST} --reload --port ${FASTAPI_PORT}

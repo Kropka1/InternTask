@@ -5,4 +5,5 @@ app = fastapi.FastAPI()
 
 @app.on_event("startup")
 async def start_up():
-    engine.connect()
+    await engine.connect()
+
